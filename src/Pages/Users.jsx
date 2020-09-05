@@ -6,9 +6,9 @@ import { Link } from "react-router-dom";
 
 import { useContextApp } from "../Context/index";
 
-
-
 import Card from '../Components/Card'
+
+import Header from '../Components/Header'
 
 const Users = () => {
 
@@ -20,13 +20,12 @@ const Users = () => {
 
   return (
     <>
-      {/* <h1>Users</h1> */}
-        <Card />
-      <button onClick={() => setTest('oii')}>exemple state</button>
+      <Header value="Users"/>
+      {/* <button onClick={() => setTest('oii')}>exemple state</button>
       <FiSearch size={40} color="#0ff"/>
       <button>
         <Link to="/tasks">{test}</Link>
-      </button>
+      </button> */}
     </>
   );
 };
