@@ -15,10 +15,10 @@ export default function App() {
 
   useEffect(() => {
 
-    (async function myReq () {
-      const resp = await api.get("/todos")
-      console.log('resp', resp.data)
-    })()
+    // (async function myReq () {
+    //   const resp = await api.get("/todos")
+    //   console.log('resp', resp.data)
+    // })()
 
   }, []);
   return (
