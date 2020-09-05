@@ -1,15 +1,48 @@
-import React from 'react'
+import React, {useState} from "react";
 
-import { CardStyled, Exemplo } from './style'
+import { FiChevronRight } from "react-icons/fi";
 
-const Card = () => {
+import { CardStyled, CardHeader, BodyCard } from "./style";
+
+const Card = ({
+  name,
+  tasksCompleted,
+  tasksNotCompleted,
+  taskTotal,
+}) => {
+
+  const [expanslible, setExapansible] = useState(false)
+
   return (
-    <CardStyled inactive={false}>
-      <Exemplo>
-        Teste
-      </Exemplo>
+    <CardStyled>
+      <CardHeader expanslible={expanslible}>
+        <p>{name}</p>
+        <FiChevronRight onClick={() => setExapansible(!expanslible)}/>
+      </CardHeader>
+      {expanslible && (
+        <>
+        <BodyCard>
+          <span>Tasks concluídas</span>
+          {tasksCompleted}
+        </BodyCard>
+        <BodyCard>
+          <span>Total não concluídas</span>
+          {tasksNotCompleted}
+        </BodyCard>
+        <BodyCard>
+          <span>Total das tasks</span>
+          {taskTotal}
+        </BodyCard>
+        </>
+      )}
     </CardStyled>
-  )
-}
+  );
+};
 
 export default Card;
+
+// ${(props) =>
+//   props.inactive &&
+//   css`
+//    background: #c53030;
+//   `}
