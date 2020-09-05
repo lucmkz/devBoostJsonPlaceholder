@@ -8,6 +8,8 @@ import ContextProvider from './Context'
 import Routes from './Routes';
 
 import api from "./services";
+import AsideMenu from './Components/Aside';
+
 
 export default function App() {
 
@@ -23,6 +25,7 @@ export default function App() {
     <Router>
       <ContextProvider>
         <Routes />
+        <AsideMenu/>
       </ContextProvider>
 
       <GlobalStyle />
