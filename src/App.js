@@ -1,16 +1,17 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import api from './services'
 import "./styles.css";
 
 export default function App() {
+  const [todos, setTodos] = useState([]);
 
   useEffect(() => {
-    api.get('/todos').then(r => console.log(r.data))
+    api.get('/todos').then(r => setTodos(r.data))
   }, [])
 
   return (
     <div className="App">
-      <h1>Hi (:</h1>
+      {todos.map(i => (<><span>{i.title}</span><br></br></>))}
     </div>
   );
 }
