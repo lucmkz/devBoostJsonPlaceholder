@@ -2,22 +2,28 @@ import styled, { css } from "styled-components";
 
 import { darken } from 'polished'
 
+export const Container = styled.div`
+  height: 180px;
+  width: 370px
+`
+
 export const CardStyled = styled.div`
   background: #292f3f;
   border-radius: 10px;
-  width: 400px;
   box-shadow: 10px 5px 5px black;
   padding: 20px 0;
+  margin: 20px;
 `;
 
 export const CardHeader = styled.div`
     display: flex;
     justify-content: space-between;
     padding: 0 20px;
-    font-size: 40px;
+    font-size: 25px;
 
   p{
     color: #F2C94C;
+    white-space: nowrap;
   }
 
   svg {
