@@ -24,8 +24,11 @@ export default function App() {
   return (
     <Router>
       <ContextProvider>
-        <Routes />
+        <div style={{display: 'flex'}}>
         <AsideMenu/>
+        <Routes />
+
+        </div>
       </ContextProvider>
 
       <GlobalStyle />

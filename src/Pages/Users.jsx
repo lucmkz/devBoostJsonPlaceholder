@@ -9,6 +9,7 @@ import { useContextApp } from "../Context/index";
 import Card from "../Components/Card";
 
 import Header from "../Components/Header";
+import Container from '../Components/Container'
 
 import api from '../services'
 
@@ -28,7 +29,7 @@ const Users = () => {
   }, []);
 
   return (
-    <>
+    <Container>
       <Header value="Users" />
       <Card
         typeCard={'USERS'}
@@ -37,7 +38,7 @@ const Users = () => {
         tasksNotCompleted={10}
         taskTotal={20}
       />
-    </>
+    </Container>
   );
 };
 
