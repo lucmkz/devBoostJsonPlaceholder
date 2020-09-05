@@ -1,17 +1,28 @@
-import React, {useEffect, useState} from "react";
-import api from './services'
+import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+
+import GlobalStyle from './Style/Global'
+
+import ContextProvider from './Context'
+
+import Routes from './Routes';
+
+import api from "./services";
 import "./styles.css";
 
 export default function App() {
-  const [todos, setTodos] = useState([]);
 
-  useEffect(() => {
-    api.get('/todos').then(r => setTodos(r.data))
-  }, [])
+  // useEffect(() => {
+  //   api.get("/todos").then((r) => setTodos(r.data));
+  // }, []);
 
   return (
-    <div className="App">
-      {todos.map(i => (<><span>{i.title}</span><br></br></>))}
-    </div>
+    <Router>
+      <ContextProvider>
+        <Routes />
+      </ContextProvider>
+
+      <GlobalStyle />
+    </Router>
   );
 }
