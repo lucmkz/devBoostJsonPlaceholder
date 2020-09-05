@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { FiChevronRight } from "react-icons/fi";
 
-import { CardStyled, CardHeader, BodyCard, Container } from "./style";
+import { CardStyled, CardHeader, BodyCard, Container, LinkPage } from "./style";
 
 const Card = ({ name, tasksCompleted, tasksNotCompleted, taskTotal, typeCard }) => {
 
@@ -31,6 +31,7 @@ const Card = ({ name, tasksCompleted, tasksNotCompleted, taskTotal, typeCard }) 
                   <span>Total das tasks</span>
                   {taskTotal}
                 </BodyCard>
+                <LinkPage>Ver Detalhes</LinkPage>
               </>
             )}
           </>

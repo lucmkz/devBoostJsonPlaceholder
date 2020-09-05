@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 import { darken } from 'polished'
 
 export const Container = styled.div`
-  height: 180px;
+  height: 200px;
   width: 370px
 `
 
@@ -47,8 +47,8 @@ export const CardHeader = styled.div`
 `;
 
 export const BodyCard = styled.div`
-transition: 0.3s;
-display: flex;
+    transition: 0.3s;
+    display: flex;
     justify-content: space-between;
     margin: 5px 30px;
     font-size: 20px;
@@ -56,3 +56,15 @@ display: flex;
     font-weight: 100;
     border-bottom: 1px solid;
 `
+
+export const LinkPage = styled.span`
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-top: 10px;
+
+    &:hover{
+        cursor: pointer;
+        color: ${darken(0.2, '#FE3892')}
+    }
+  `

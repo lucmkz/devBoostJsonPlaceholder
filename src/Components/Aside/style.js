@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { darken } from 'polished'
 
 export const Aside = styled.aside`
     background: #292F3F;
@@ -29,6 +30,9 @@ export const Aside = styled.aside`
 
     & + a {
       margin-top: 18px;
+    }
+    a:hover {
+      background: ${darken(0.2, '#292F3F')}
     }
   }
 `;
