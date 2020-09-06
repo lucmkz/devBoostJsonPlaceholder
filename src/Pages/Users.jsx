@@ -63,9 +63,9 @@ const Users = () => {
         const taskIncomplete = task[i].tarefas.filter(item => !item.completed)
         const obj = {
           name: arr[i].name,
-          concluidas: taskComplete.length,
-          incompletas: taskIncomplete.length,
-          total: task[i].tarefas.length,
+          concluidas: taskComplete,
+          incompletas: taskIncomplete,
+          total: task[i].tarefas,
           tasks: task[i].tarefas,
           id: arr[i].id
         };
@@ -87,9 +87,9 @@ const Users = () => {
               key={index}
               typeCard={"USERS"}
               name={user.name}
-              tasksCompleted={user.concluidas}
-              tasksNotCompleted={user.incompletas}
-              taskTotal={user.total}
+              tasksCompleted={user.concluidas.length}
+              tasksNotCompleted={user.incompletas.length}
+              taskTotal={user.total.length}
               id={user.id}
             />
           ))}

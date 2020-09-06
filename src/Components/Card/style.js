@@ -4,7 +4,7 @@ import { darken } from 'polished'
 
 export const Container = styled.div`
   height: 200px;
-  width: 370px
+  width: 660px;
 `
 
 export const CardStyled = styled.div`
