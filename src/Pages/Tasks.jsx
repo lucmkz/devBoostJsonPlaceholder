@@ -7,6 +7,7 @@ import Header from "../Components/Header";
 import Container from "../Components/Container";
 import ContainerCard from "../Components/ContainerCard";
 import { useContextApp } from "../Context/index";
+import CardList from '../Components/CardList'
 
 const Tasks = () => {
   const { params } = useRouteMatch();
@@ -41,8 +42,8 @@ const Tasks = () => {
       {usersComplete[0]?.incompletas ? (
         <Container >
           <Header value={"Tasks"} />
+          <CardList>
           <ContainerCard  >
-            <div className="haha">
 
             <Card 
               typeCard={"TASKS"}
@@ -51,7 +52,6 @@ const Tasks = () => {
                 selectedUserTasks && selectedUserTasks.incomplete
               }
               />
-              </div>
             {
               <Card 
                 typeCard={"DONE"}
@@ -62,6 +62,8 @@ const Tasks = () => {
               />
             }
           </ContainerCard>
+          
+          </CardList>
         </Container>
       ) : (
         <Redirect to="/" />
