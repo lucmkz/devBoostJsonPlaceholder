@@ -9,7 +9,7 @@ import Tasks from "../Pages/Tasks";
 const Routes = () => (
   <Switch>
     <Route path="/" exact component={Users} />
-    <Route path="/tasks" component={Tasks} />
+    <Route path="/tasks/:id+" component={Tasks} />
   </Switch>
 );
 

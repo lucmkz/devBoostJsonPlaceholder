@@ -36,13 +36,7 @@ export const CardHeader = styled.div`
     color: ${darken(0.2, '#FE3892')}
   }
 
-   ${(props) =>
-   props.expanslible &&
-   css`
-   svg {
-     transform: rotate(90deg);
-   }
-  `}
+   
 
 `;
 
@@ -55,6 +49,16 @@ export const BodyCard = styled.div`
     color: #CFD7E3;
     font-weight: 100;
     border-bottom: 1px solid;
+
+    ${(props) =>
+   props.expanslible &&
+   css`
+   svg {
+     color: #F2C94C;
+   }
+  `}
+
+
 `
 
 export const LinkPage = styled.span`
@@ -62,9 +66,21 @@ export const LinkPage = styled.span`
     align-items: center;
     display: flex;
     margin-top: 10px;
+    a {
+      color: #FE3892;
+      text-decoration: none;
+      &:hover{
+        cursor: pointer;
+        color: ${darken(0.2, '#FE3892')}
+    }
 
+    }
     &:hover{
         cursor: pointer;
         color: ${darken(0.2, '#FE3892')}
     }
+
+    
   `
+
+

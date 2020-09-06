@@ -15,14 +15,14 @@ import CardList from "../Components/CardList";
 import api from "../services";
 
 const Users = () => {
-  const [ usersComplete, setUsersComplete ] = useState([]);
-
-
+  
   const {
     usersList,
     setUsersList,
     usersTasks,
     setUsersTasks,
+    usersComplete, 
+    setUsersComplete
   } = useContextApp();
 
   // Requisição nome de usuários
@@ -53,7 +53,8 @@ const Users = () => {
         const userTasks = usersTasks.filter(
           (iten) => iten.userId === element.data.id
         );
-        arr.push({ name: element.data.name, tarefas: userTasks });
+        arr.push({ name: element.data.name, id: element.data.id, tarefas: userTasks });
+        
       });
 
       for (let i = 0; i < arr.length; i++) {
@@ -64,10 +65,14 @@ const Users = () => {
           name: arr[i].name,
           concluidas: taskComplete.length,
           incompletas: taskIncomplete.length,
-          total: task[i].tarefas.length
+          total: task[i].tarefas.length,
+          tasks: task[i].tarefas,
+          id: arr[i].id
         };
+
         ret.push(obj)
       }
+     
       setUsersComplete(ret)
     }
   }, [usersList, usersTasks]);
@@ -85,6 +90,7 @@ const Users = () => {
               tasksCompleted={user.concluidas}
               tasksNotCompleted={user.incompletas}
               taskTotal={user.total}
+              id={user.id}
             />
           ))}
       </CardList>

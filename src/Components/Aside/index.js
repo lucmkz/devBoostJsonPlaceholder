@@ -11,7 +11,6 @@ const AsideMenu = () => {
     <Aside> 
       <img src={logo} alt="G6 - D Tasks"/>
       <div> <Link to="/"> <FiUser/> Users </Link> </div>
-      <div> <Link to="/tasks" > <FiFileText/> Tasks </Link> </div>
       
     </Aside>
   )
